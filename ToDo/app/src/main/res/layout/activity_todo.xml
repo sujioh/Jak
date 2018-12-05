@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_Todo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.jh.myapplication_5.TodoActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"><LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/iMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:text="Month"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorGreyLight"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/iDate"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:text="D"
+                android:textSize="120sp"
+                android:textColor="@color/colorGreyLight"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp" />
+
+            <TextView
+                android:id="@+id/iYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iDate"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="-25dp"
+                android:text="Year"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorGreyLight"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:orientation="horizontal"></LinearLayout>
+
+    </LinearLayout><LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"><TextView
+        android:id="@+id/todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's tasks"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/colorGreyDark"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="gravity" /></LinearLayout><ListView
+        android:id="@+id/lstTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView></LinearLayout>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:onClick="ClickButton"
+        android:text="+" />
+</RelativeLayout>
