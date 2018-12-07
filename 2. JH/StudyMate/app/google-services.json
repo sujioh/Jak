@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "592773025900",
-    "firebase_url": "https://myapplication5-148d3.firebaseio.com",
-    "project_id": "myapplication5-148d3",
-    "storage_bucket": "myapplication5-148d3.appspot.com"
+    "project_number": "523005547503",
+    "firebase_url": "https://studymate-a5147.firebaseio.com",
+    "project_id": "studymate-a5147",
+    "storage_bucket": "studymate-a5147.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:592773025900:android:38b40ac3e86ccdcb",
+        "mobilesdk_app_id": "1:523005547503:android:3bfc2cda6c3af4e4",
         "android_client_info": {
-          "package_name": "com.jh.myapplication_5"
+          "package_name": "com.jh.studymate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "592773025900-hjoc6f9c5al25obtoiudjgo0e1jrrrm6.apps.googleusercontent.com",
+          "client_id": "523005547503-a0vv1d7p6fvf1pjt2esac927u9akek2r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.jh.myapplication_5",
+            "package_name": "com.jh.studymate",
             "certificate_hash": "e7f543aab9c137ae59bf4f735180f6e99b6102f6"
           }
         },
         {
-          "client_id": "592773025900-33lvm0lt2gab4hnv0d6tg9se6dahosjf.apps.googleusercontent.com",
+          "client_id": "523005547503-aem7tnnrtss96cl3ifrju9fhojqfevo2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDY3NBQVIb1uqD9pr_8pqvoh2AJNMqrGyM"
+          "current_key": "AIzaSyBBpvPMcTT-aBQ_EdLYfrkE5RzKxEdGlns"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "592773025900-33lvm0lt2gab4hnv0d6tg9se6dahosjf.apps.googleusercontent.com",
+              "client_id": "523005547503-aem7tnnrtss96cl3ifrju9fhojqfevo2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
