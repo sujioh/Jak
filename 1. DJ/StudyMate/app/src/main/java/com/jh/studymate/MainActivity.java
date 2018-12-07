@@ -48,6 +48,10 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.Hashtable;
 
@@ -68,15 +72,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private static int RC_SIGN_IN = 100; //구글로그인버튼추
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private BackPressedForFinish backPressedForFinish;
     DatabaseReference myRef;
     FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        //구글로그인버튼시작
+        setContentView(R.layout.activity_main);//뒤로가기
+        // BackPressedForFinish 객체를 생성한다.
+        backPressedForFinish = new BackPressedForFinish(this);
+        //페북로그인버튼시작
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -96,8 +103,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 startActivityForResult(signInIntent, RC_SIGN_IN);
 
             }
+
         });
-        //구글로그인버튼끝 (아래또있음걍지금만끝)
+
+
+        //페북로그인버튼끝 (아래또있음걍지금만끝)
 
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPassword = (EditText)findViewById(R.id.etPassword);
@@ -263,5 +273,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     }
                 });
 
+    }
+//뒤로가기
+    public void onBackPressed() {
+
+        // BackPressedForFinish 클래시의 onBackPressed() 함수를 호출한다.
+        backPressedForFinish.onBackPressed();
     }
 }
