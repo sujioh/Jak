@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app2="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_task2"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Add New Task"
+        app2:showAsAction="always" />
+
+    </menu>
