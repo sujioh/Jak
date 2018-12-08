@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 });
 
     }
-//뒤로가기
+    //뒤로가기
     public void onBackPressed() {
 
         // BackPressedForFinish 클래시의 onBackPressed() 함수를 호출한다.

@@ -17,12 +17,6 @@
             android:title="Add New Task"
              />
 
-        <!--
-        <item android:id="@+id/nav_chat"
-            android:icon="@drawable/ic_chat"
-            android:title="Chat"/>
-        -->
-
         <item android:id="@+id/nav_alarm"
             android:icon="@drawable/ic_alarm"
             android:title="Alarm"/>
@@ -41,9 +35,6 @@
 
         </menu>
     </item>
-
-
-
 </menu>
 
 

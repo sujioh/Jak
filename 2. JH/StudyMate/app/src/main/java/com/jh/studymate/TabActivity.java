@@ -13,8 +13,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class TabActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-	public static final String EXTRA_MESSAGE = "com.example.myapplication5.MESSAGE";
-	
+    public static final String EXTRA_MESSAGE = "com.studymate.MESSAGE";
+
     private DrawerLayout drawer;
 
     @Override
@@ -35,16 +35,11 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
         drawer. addDrawerListener(toggle);
         toggle.syncState();
 
-
-        // 이건 뭘까.. 앱 처음 나오는 화면을 메세지로 설정
+        //앱 처음 나오는 화면을 FriendsFragment()로 설정
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FriendsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_friends);
-        }
-        //여기까지
-
-
-    }
+        }    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -64,12 +59,15 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
                 startActivity(todoIntent);
                 break;
 
+            case R.id.nav_calendar:
+                Intent calendarIntent = new Intent(this, CalendarActivity.class);
+                startActivity(calendarIntent);
+                break;
+
             case R.id.nav_alarm:
                 Intent alarmIntent = new Intent(this, AlarmActivity.class);
                 startActivity(alarmIntent);
-
                 break;
-
 
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
@@ -89,7 +87,7 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START);
         } else{
-        super.onBackPressed();
+            super.onBackPressed();
         }
     }
 
