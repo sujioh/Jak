@@ -34,9 +34,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.google.firebase:firebase-storage:16.0.5'
+
+    // splash 화면
     implementation 'gr.pantrif:easy-android-splash-screen:0.0.1'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
-    implementation 'com.google.firebase:firebase-auth:16.0.1'
+
+    // 페이스북 로그인
     implementation 'com.facebook.android:facebook-login:[4,5)'
-    //위 페북로그인
+
 }

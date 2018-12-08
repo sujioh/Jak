@@ -59,6 +59,11 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
                 startActivity(todoIntent);
                 break;
 
+            case R.id.nav_calendar:
+                Intent calendarIntent = new Intent(this, CalendarActivity.class);
+                startActivity(calendarIntent);
+                break;
+
             case R.id.nav_alarm:
                 Intent alarmIntent = new Intent(this, AlarmActivity.class);
                 startActivity(alarmIntent);
