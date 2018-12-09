@@ -9,7 +9,7 @@
             android:id="@+id/listButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WRITE"/>
+            android:text="질문 추가"/>
 
         <ListView
             android:id="@+id/listView"

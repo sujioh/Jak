@@ -19,25 +19,21 @@ public class ViewActivity extends AppCompatActivity {
 
         SQLiteDatabase db = openOrCreateDatabase("board.db",MODE_PRIVATE,null);
         String sql ="select " +
-                "subject, wdate, writer, phone, mail, hit , content " +
+                "subject, wdate, writer, hit , content " +
                 "from board where _id = "+id ;
         Cursor cursor = db.rawQuery(sql,null);
         if(cursor.moveToNext()){
             TextView viewSubjectET =(TextView)findViewById(R.id.viewSubjectET);
             TextView viewWdateET =(TextView)findViewById(R.id.viewWdateET);
             TextView viewWriterET =(TextView)findViewById(R.id.viewWriterET);
-            TextView viewPhoneET =(TextView)findViewById(R.id.viewPhoneET);
-            TextView viewMailET =(TextView)findViewById(R.id.viewMailET);
             TextView viewHitET =(TextView)findViewById(R.id.viewHitET);
             TextView viewContentET =(TextView)findViewById(R.id.viewContentET);
 
             viewSubjectET.setText(cursor.getString(0));
             viewWdateET.setText(cursor.getString(1));
             viewWriterET.setText(cursor.getString(2));
-            viewPhoneET.setText(cursor.getString(3));
-            viewMailET.setText(cursor.getString(4));
-            viewHitET.setText(cursor.getString(5));
-            viewContentET.setText(cursor.getString(6));
+            viewHitET.setText(cursor.getString(3));
+            viewContentET.setText(cursor.getString(4));
 
             findViewById(R.id.viewReMoveButton).setOnClickListener(new View.OnClickListener() {
                 @Override

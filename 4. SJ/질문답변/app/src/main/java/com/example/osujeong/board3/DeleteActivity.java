@@ -23,7 +23,7 @@ public class DeleteActivity extends AppCompatActivity {
 
         SQLiteDatabase db = openOrCreateDatabase("board.db",MODE_PRIVATE,null);
         String sql ="select " +
-                "subject, wdate, writer, phone, mail, hit , content, password " +
+                "subject, wdate, writer, hit , content, password " +
                 "from board where _id = '"+id + "'";
 
         Cursor cursor = db.rawQuery(sql,null);
@@ -48,7 +48,7 @@ public class DeleteActivity extends AppCompatActivity {
                     db.close();
                     finish();
                 }else {
-                    Toast.makeText(DeleteActivity.this,"비밀번호 틀렸습니다",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteActivity.this,"비밀번호가 틀렸습니다",Toast.LENGTH_SHORT).show();
                 }
             }
         });

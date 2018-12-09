@@ -6,8 +6,7 @@ public class BoardTO {
     private String _id;
     private String subject;
     private String writer;
-    private String mail;
-    private String phone;
+
     private String password;
     private String content;
     private String hit;
@@ -37,21 +36,7 @@ public class BoardTO {
         this.writer = writer;
     }
 
-    public String getMail() {
-        return mail;
-    }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getPassword() {
         return password;

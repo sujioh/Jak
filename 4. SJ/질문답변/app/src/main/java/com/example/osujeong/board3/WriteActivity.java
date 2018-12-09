@@ -18,18 +18,14 @@ public class WriteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText etSubject =(EditText)findViewById(R.id.whiteSubjectET);
-                EditText etPessword =(EditText)findViewById(R.id.whitePasswordET);
+                EditText etPassword =(EditText)findViewById(R.id.whitePasswordET);
                 EditText etWriter =(EditText)findViewById(R.id.whiteWriterET);
                 EditText etContent =(EditText)findViewById(R.id.whiteContentET);
-                EditText etMail =(EditText)findViewById(R.id.whiteMailET);
-                EditText etPhon =(EditText)findViewById(R.id.whitePhonET);
 
                 String stretSubject = etSubject.getText().toString();
-                String stretPessword = etPessword.getText().toString();
+                String stretPessword = etPassword.getText().toString();
                 String stretWriter = etWriter.getText().toString();
                 String stretContent = etContent.getText().toString();
-                String stretMail = etMail.getText().toString();
-                String stretPhon = etPhon.getText().toString();
 
                 //필수 입력 항목 검사 (경고창) 토스트 해야함.
 
@@ -37,8 +33,8 @@ public class WriteActivity extends AppCompatActivity {
 
                 //크리에이트 구문을 문자열로 치거나 스트링 빌더, 스트링버퍼 든 마음대로.if not exist
                 String sql ="insert into board(\n" +
-                        "subject, writer, mail, phone ,password, content,hit,wdate)\n" +
-                        " values('" + stretSubject+ "','" + stretWriter+"','"+ stretMail +"','"+ stretPhon +"','"+stretPessword +"','"+stretContent +"',0,datetime('now','localtime'))";
+                        "subject, writer, password, content,hit,wdate)\n" +
+                        " values('" + stretSubject+ "','" + stretWriter+"','"+ stretPessword +"','"+stretContent +"',0,datetime('now','localtime'))";
                 db.execSQL(sql);
 
                 Intent intent = new Intent();

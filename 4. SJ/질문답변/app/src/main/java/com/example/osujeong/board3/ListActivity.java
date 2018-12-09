@@ -78,8 +78,6 @@ public class ListActivity extends AppCompatActivity {
                 "_id integer primary key autoincrement,\n" +
                 "subject text not null,\n" +
                 "writer text not null,\n" +
-                "mail text,\n" +
-                "phone text not null,\n" +
                 "password text not null,\n" +
                 "content text,\n" +
                 "hit integer not null,\n" +
@@ -88,8 +86,8 @@ public class ListActivity extends AppCompatActivity {
 
         boardRecords = new ArrayList<BoardTO>();//아이디 담는 어레이리스트
 
-        sql ="select _id ,subject, writer, mail, " +
-                "phone ,password, content, hit, wdate " +
+        sql ="select _id ,subject, writer, " +
+                "password, content, hit, wdate " +
                 "from board";
         Cursor cursor = db.rawQuery(sql,null);
 
@@ -98,18 +96,16 @@ public class ListActivity extends AppCompatActivity {
             boardTo.set_id(cursor.getString(0));
             boardTo.setSubject(cursor.getString(1));
             boardTo.setWriter(cursor.getString(2));
-            boardTo.setMail(cursor.getString(3));
-            boardTo.setPhone(cursor.getString(4));
-            boardTo.setPassword(cursor.getString(5));
-            boardTo.setContent(cursor.getString(6));
-            boardTo.setHit(cursor.getString(7));
-            boardTo.setWdate(cursor.getString(8));
+            boardTo.setPassword(cursor.getString(3));
+            boardTo.setContent(cursor.getString(4));
+            boardTo.setHit(cursor.getString(5));
+            boardTo.setWdate(cursor.getString(6));
 
 
-            String recorde = String.format("글번호:%s /제목:%s /글쓴이:%s /메일 :%s"
-                    , boardTo.get_id(), boardTo.getSubject(),boardTo.getWdate(),boardTo.getMail());
+            String recorde = String.format("글번호:%s /제목:%s /작성자:%s "
+                    , boardTo.get_id(), boardTo.getSubject(),boardTo.getWdate());
             data1.add(recorde);
-            boardRecords.add(boardTo);//조심해야 할게. 반드시 뉴 해야 합니다.
+            boardRecords.add(boardTo);//조심해야 할게 반드시 뉴 해야 합니다.
         }
         cursor.close();
         db.close();
