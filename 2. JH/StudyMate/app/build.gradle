@@ -42,4 +42,20 @@ dependencies {
     // 페이스북 로그인
     implementation 'com.facebook.android:facebook-login:[4,5)'
 
+    // 구글 캘린더 연동
+    implementation 'pub.devrel:easypermissions:0.3.0'
+    implementation('com.google.api-client:google-api-client-android:1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-calendar:v3-rev235-1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev260-1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.api-client:google-api-client-android:1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.http-client:google-http-client-gson:1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.android.gms:play-services-identity:7.3.0'
+    implementation 'com.android.support:support-v4:28.0.0-beta01'
+
+    implementation 'com.google.http-client:google-http-client-gson:1.19.0';
+    }
 }

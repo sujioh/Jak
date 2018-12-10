@@ -10,7 +10,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.jh.myapplication_5.TodoActivity">
+    tools:context=".TodoActivity">
 
 
     <LinearLayout

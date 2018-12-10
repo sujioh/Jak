@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Android Add Event To Google Calendar</string>
+    <string name="add_event">Add Event</string>
+    <string name="add_event_to_google_calendar">Add event to google calendar</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
