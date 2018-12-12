@@ -9,15 +9,15 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="197dp"
-        android:layout_height="372dp"
+        android:layout_width="203dp"
+        android:layout_height="425dp"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
@@ -25,7 +25,26 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="7dp" />
 
-        <!--
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/Google_Login"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="36dp">
+
+        </com.google.android.gms.common.SignInButton>
+
+        <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+            android:id="@+id/buttonNaverLogin"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnLogin"
+            android:layout_marginTop="0dp" />
+
+
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
@@ -36,28 +55,27 @@
             android:layout_marginBottom="-27dp"
             android:text="아이디 저장"
             android:textSize="9dp" />
-        -->
-        <!--
+
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/pascheckBox3"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_alignBottom="@+id/checkBox"
             android:layout_alignParentStart="true"
             android:layout_marginStart="100dp"
             android:layout_marginBottom="-1dp"
-            android:text="자동 로그인"
+            android:text="비밀번호 저장"
             android:textSize="9dp" />
-        -->
+
         <TextView
             android:id="@+id/tvHello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
-            android:text="StudyMate"
-            android:textColor="#000000"
-            android:textSize="30sp"
+            android:text="작심삼일"
+            android:textColor="#272626"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
         <EditText
@@ -86,7 +104,7 @@
             android:layout_below="@+id/etPassword"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="-7dp"
+            android:layout_marginTop="27dp"
             android:text="REGISTER" />
 
         <Button
@@ -95,41 +113,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnRegister"
             android:layout_alignParentStart="true"
+
+
             android:layout_marginTop="0dp"
             android:text="LOGIN" />
 
-
-        <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
-            android:id="@+id/buttonNaverLogin"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/btnLogin"
-            />
-
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/Google_Login"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="39dp"
-            android:layout_below="@+id/buttonNaverLogin">
-        </com.google.android.gms.common.SignInButton>
-
-        <!--
-        <Button
+        <!-- <Button
             android:id="@+id/btn_exit"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnLogin"
             android:layout_alignParentStart="true"
             android:layout_marginTop="0dp"
-            android:text="CANCEL" />
-        -->
+            android:text="CANCEL" /> -->
+
 
     </RelativeLayout>
     <ProgressBar

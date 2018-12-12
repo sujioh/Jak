@@ -20,9 +20,9 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        listView = (ListView)findViewById(R.id.ListView);
-
-        readDatabase();//맨처음은 테이블이 없기때문에 애러날 수 있다. 그러니까 크리에이트 부분을
+        listView = (ListView)findViewById(R.id.listView);
+        readDatabase();
+        //맨처음은 테이블이 없기때문에 에러날 수 있다. 그러니까 크리에이트 부분을
         //셀렉트 전의 위치로 옮긴다.
 
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -40,6 +40,7 @@ public class ListActivity extends AppCompatActivity {
         findViewById(R.id.listButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Intent intent = new Intent(ListActivity.this,WriteActivity.class);
                 Intent intent = new Intent(ListActivity.this,WriteActivity.class);
                 startActivityForResult(intent,0);
             }

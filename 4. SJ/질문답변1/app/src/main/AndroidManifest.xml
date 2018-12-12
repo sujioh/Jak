@@ -20,7 +20,6 @@
         <activity android:name=".DeleteActivity" />
         <activity android:name=".ModifyActivity" />
         <activity android:name=".ViewActivity" />
-        <activity android:name=".BoardTO"></activity>
     </application>
 
 </manifest>

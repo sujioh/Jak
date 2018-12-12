@@ -1,5 +1,6 @@
 package com.jh.studymate;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -82,6 +84,36 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         setContentView(R.layout.activity_main);//뒤로가기
         // BackPressedForFinish 객체를 생성한다.
+
+        //아이디저장시작
+
+
+        EditText etId=(EditText)findViewById(R.id.etEmail);
+        EditText etPwd=(EditText)findViewById(R.id.etPassword);
+        CheckBox etIdSave=(CheckBox)findViewById(R.id.checkBox);
+        CheckBox etPwdSave=(CheckBox)findViewById(R.id.pascheckBox3);
+
+        etId.requestFocus();
+
+        // Activtiy 불러올 시 SharedPreFerences에 저장 되었는  "pref"에서 조건에 맞춰 값을 가져온다
+        SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
+        String id=pref.getString("id_save", "");
+        String pwd=pref.getString("pwd_save", "");
+        Boolean chk1=pref.getBoolean("chk1", false);
+        Boolean chk2=pref.getBoolean("chk2", false);
+
+        if(chk1==true){
+            etId.setText(id);
+            etIdSave.setChecked(chk1);
+        }
+        if(chk2==true){
+            etPwd.setText(pwd);
+            etPwdSave.setChecked(chk2);
+
+    }
+
+        //아이디저장끝
+
         backPressedForFinish = new BackPressedForFinish(this);
         //페북로그인버튼시작
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -218,6 +250,22 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+            //아이디저장
+            SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            EditText etId=(EditText)findViewById(R.id.etEmail);
+            EditText etPwd=(EditText)findViewById(R.id.etPassword);
+            CheckBox etIdSave=(CheckBox)findViewById(R.id.checkBox);
+            CheckBox etPwdSave=(CheckBox)findViewById(R.id.pascheckBox3);
+
+            //SharedPreferences에 각 아이디를 지정하고 EditText 내용을 저장한다.
+            editor.putString("id_save", etId.getText().toString());
+            editor.putString("pwd_save", etPwd.getText().toString());
+            editor.putBoolean("chk1", etIdSave.isChecked());
+            editor.putBoolean("chk2", etPwdSave.isChecked());
+
+            editor.commit();
+            //
         }
     }
 

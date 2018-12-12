@@ -29,7 +29,7 @@ public class ListActivity extends AppCompatActivity {
         myDb = new DBHelper(this);
 
         btnAddData = (Button)findViewById(R.id.listButton);
-        listView = (ListView)findViewById(R.id.ListView);
+        listView = (ListView)findViewById(R.id.listView);
 
         readDatabase();//맨처음은 테이블이 없기때문에 애러날 수 있다. 그러니까 크리에이트 부분을
         //셀렉트 전의 위치로 옮긴다.

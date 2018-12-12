@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "263560990833",
+    "firebase_url": "https://leaderboard-81c30.firebaseio.com",
+    "project_id": "leaderboard-81c30",
+    "storage_bucket": "leaderboard-81c30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263560990833:android:f58bdf0f956247db",
+        "android_client_info": {
+          "package_name": "com.example.osujeong.board3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263560990833-a8hrdkfdpok94mf3rhld4nladjkf5ann.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdG8QE3X8_yoi1tiGxxG2UAakz1R0tfLk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263560990833:android:3126d494ec618c2f",
+        "android_client_info": {
+          "package_name": "me.chaitanyavp.aerozen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263560990833-a8hrdkfdpok94mf3rhld4nladjkf5ann.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdG8QE3X8_yoi1tiGxxG2UAakz1R0tfLk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

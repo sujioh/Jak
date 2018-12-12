@@ -24,7 +24,6 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = String.format("CREATE TABLE %s (ID INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT NOT NULL);", DB_TABLE, DB_COLUMN);
-
         db.execSQL(query);
     }
 
@@ -44,7 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteNewTask(String task) {
+    public void deleteTask(String task) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(DB_TABLE, DB_COLUMN + " =? ", new String[]{task});
         db.close();

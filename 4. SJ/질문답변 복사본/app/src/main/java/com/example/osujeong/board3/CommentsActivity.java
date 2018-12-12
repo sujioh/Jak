@@ -11,12 +11,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.HashMap;
 
 public class CommentsActivity extends AppCompatActivity {
 
     EditText addcomment;
-    ImageView image_profile;
+    //ImageView image_profile;
     TextView post;
 
     String postid;
@@ -41,7 +50,7 @@ public class CommentsActivity extends AppCompatActivity {
         });
 
         addcomment = findViewById(R.id.add_comment);
-        image_profile = findViewById(R.id.image_profile);
+      //  image_profile = findViewById(R.id.image_profile);
         post = findViewById(R.id.post);
 
         Intent intent = getIntent();
@@ -73,8 +82,12 @@ public class CommentsActivity extends AppCompatActivity {
         addcomment.setText("");
     }
 
+    /*
     private void getImage(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-        reference.addValueEventListener(new ValueEventListener)
+        reference.addValueEventListener(new ValueEventListener(){
+
+        });
     }
+    */
 }

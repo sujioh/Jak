@@ -59,6 +59,11 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
                 startActivity(todoIntent);
                 break;
 
+            case R.id.board:
+                Intent ListIntent = new Intent(this, ListActivity.class);
+                startActivity(ListIntent);
+                break;
+
             case R.id.nav_calendar:
                 Intent calendarIntent = new Intent(this, CalendarActivity.class);
                 startActivity(calendarIntent);
@@ -75,13 +80,13 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
                 break;
 
 
+            /*
             case R.id.nav_send:
                 break;
 
-
             case R.id.nav_get:
                 break;
-
+            */
 
         }
 

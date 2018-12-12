@@ -17,7 +17,6 @@ public class DeleteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
 
-
         final Intent intent = getIntent();
         final String id = intent.getStringExtra("id");
 
