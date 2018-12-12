@@ -74,15 +74,15 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
                 startActivity(CalendarSampleIntent);
                 break;
 
-            /*
+
             case R.id.nav_send:
-               // Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
                 break;
 
+
             case R.id.nav_get:
-                //Toast.makeText(this, "Get", Toast.LENGTH_SHORT).show();
                 break;
-            */
+
+
         }
 
         drawer.closeDrawer(GravityCompat.START);
