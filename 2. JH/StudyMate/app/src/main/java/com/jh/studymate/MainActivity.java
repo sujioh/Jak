@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,46 +30,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.GoogleAuthProvider;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import java.util.Hashtable;
 
-import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.nhn.android.naverlogin.OAuthLogin;
-import com.nhn.android.naverlogin.OAuthLoginHandler;
-import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
-
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -82,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     String stEmail;
     String stPassword;
     ProgressBar pbLogin;
+
+    // 이메일 주소 띄우기
+    String st_email;
+    TextView textView_st_email;
 
     private static int RC_SIGN_IN = 100; //구글로그인버튼추
     private FirebaseAuth mAuth;
@@ -96,13 +62,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         setContentView(R.layout.activity_main);//뒤로가기
 
-        //아이디저장시작
-
-
         EditText etId=(EditText)findViewById(R.id.etEmail);
         EditText etPwd=(EditText)findViewById(R.id.etPassword);
         CheckBox etIdSave=(CheckBox)findViewById(R.id.checkBox);
         CheckBox etPwdSave=(CheckBox)findViewById(R.id.pascheckBox3);
+
+        // 이메일 주소 띄우기
+        st_email = getString(R.string.st_email);
+
 
         etId.requestFocus();
 
@@ -185,6 +152,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onClick(View view) {
                 stEmail = etEmail.getText().toString();
+
+                // 이메일 주소 띄우기
+                String resultText = String.format(st_email,stEmail);
+                textView_st_email = (TextView)findViewById(R.id.st_email);
+                textView_st_email.setText(resultText);
+
                 stPassword = etPassword.getText().toString();
 
                 // Toast.makeText(MainActivity.this, stEmail+","+stPassword, Toast.LENGTH_SHORT).show();
