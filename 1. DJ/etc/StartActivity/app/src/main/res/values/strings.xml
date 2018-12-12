@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StartActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
+</resources>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/splash2_img"
+    android:background="@drawable/bebsp"
     android:layout_gravity="center"
     android:id="@+id/lin_lay"
     android:gravity="center"
@@ -12,7 +12,7 @@
         android:id="@+id/splash"
         android:layout_width="305dp"
         android:layout_height="101dp"
-        android:background="@drawable/pro" />
+        android:background="@drawable/pro3" />
 
 </LinearLayout>
 
