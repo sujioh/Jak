@@ -12,7 +12,6 @@ public class Friend {
         // Default constructor required for calls to DataSnapshot.getValue(Comment.class)
     }
 
-
     public String getEmail() {
         return email;
     }
