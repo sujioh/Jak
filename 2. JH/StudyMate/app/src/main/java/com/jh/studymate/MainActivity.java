@@ -55,11 +55,23 @@ import android.widget.Toast;
 
 import java.util.Hashtable;
 
+import android.content.Context;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.nhn.android.naverlogin.OAuthLogin;
+import com.nhn.android.naverlogin.OAuthLoginHandler;
+import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-//implements GoogleApiClient.OnConnectionFailedListener 추가
 
     SignInButton Google_Login; //구글로그인버튼추가
     String TAG = "MainActivity";
@@ -280,4 +292,5 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         // BackPressedForFinish 클래시의 onBackPressed() 함수를 호출한다.
         backPressedForFinish.onBackPressed();
     }
+
 }
