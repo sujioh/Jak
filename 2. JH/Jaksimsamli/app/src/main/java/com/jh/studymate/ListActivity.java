@@ -105,7 +105,7 @@ public class ListActivity extends AppCompatActivity {
             //받은 데이터를 객체에 넣고 넣었다 뽑으면 편하다.
             // 아니면 데이터를 별도로 넣을 어레이리스트를 만들어도 된다
 
-            String recorde = String.format("글번호:%s /제목:%s /글쓴이:%s /메일 :%s"
+            String recorde = String.format("번호: %s \n제목: %s \n작성일: %s \n메일: %s"
                     , boardTo.get_id(), boardTo.getSubject(),boardTo.getWdate(),boardTo.getMail());
             data1.add(recorde);
             boardRecords.add(boardTo);//조심해야 할게. 반드시 뉴 해야 합니다.
