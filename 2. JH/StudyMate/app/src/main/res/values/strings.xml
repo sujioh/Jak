@@ -26,6 +26,4 @@
     <string name="error">Error</string>
     <string name="error_format">[Error] %s</string>
 
-    // 이메일 주소를 받아서 표시하기
-    <string name="st_email">Email : %1$s</string>
 </resources>

@@ -71,7 +71,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
         if(TextUtils.isEmpty(stPhoto)) {
 
             Picasso.with(context)
-                    .load(R.mipmap.ic_nophoto)
+                    .load(R.drawable.beb2)
                     .fit()
                     .centerInside()
                     .into(holder.ivUser);

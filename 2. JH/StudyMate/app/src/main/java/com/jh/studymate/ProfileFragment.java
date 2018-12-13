@@ -180,10 +180,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+
                 //Uri downloadUrl = taskSnapshot.getDownloadUrl();
                 //여기부분 에러나는듯
-                Task<Uri> downloadUrl = taskSnapshot.getStorage().getDownloadUrl();
+
+               Task<Uri> downloadUrl = taskSnapshot.getStorage().getDownloadUrl();
+
                 String photoUri =  String.valueOf(downloadUrl);
+
                 Log.d("url", photoUri);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("users");
@@ -257,23 +261,3 @@ public class ProfileFragment extends Fragment {
 
 }
 
-
-
-/*
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-public class ProfileFragment extends Fragment {
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container,false);
-    }
-}
-*/
