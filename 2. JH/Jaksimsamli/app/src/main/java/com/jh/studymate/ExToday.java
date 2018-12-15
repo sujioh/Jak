@@ -59,7 +59,7 @@ public class ExToday extends Activity implements OnItemClickListener,
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
-        // TODO Auto-generated method stub
+
         Intent intent = new Intent(this, Detail.class);
         cursor.moveToPosition(position);
         intent.putExtra("ParamID", cursor.getInt(0));
@@ -68,7 +68,7 @@ public class ExToday extends Activity implements OnItemClickListener,
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
+
         Intent intent = new Intent(this, Detail.class);
         intent.putExtra("ParamDate", today);
         startActivityForResult(intent, 1);
@@ -77,13 +77,12 @@ public class ExToday extends Activity implements OnItemClickListener,
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
-        // super.onActivityResult(requestCode, resultCode, data);
+
         switch (requestCode) {
             case 0:
             case 1:
                 if (resultCode == RESULT_OK) {
-                    // adapter.notifyDataSetChanged();
+
                     SQLiteDatabase db = mDBHelper.getWritableDatabase();
                     cursor = db.rawQuery("SELECT * FROM today WHERE date = '"
                             + today + "'", null);

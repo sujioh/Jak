@@ -42,7 +42,7 @@ class AsyncUpdateCalendar extends CalendarAsyncTask {
           client.calendars().patch(calendarId, entry).setFields(CalendarInfo.FIELDS).execute();
       model.add(updatedCalendar);
     } catch (GoogleJsonResponseException e) {
-      // 404 Not Found would happen if user tries to delete an already deleted calendar
+
       if (e.getStatusCode() != 404) {
         throw e;
       }

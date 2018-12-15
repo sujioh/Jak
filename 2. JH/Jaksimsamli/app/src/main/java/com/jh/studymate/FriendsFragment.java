@@ -32,20 +32,17 @@ public class FriendsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v =  inflater.inflate(R.layout.fragment_friends, container, false);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.rvFriend);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mFriend = new ArrayList<>();
-        // specify an adapter (see also next example)
+
         mAdapter = new FriendAdapter(mFriend, getActivity());
         mRecyclerView.setAdapter(mAdapter);
         database = FirebaseDatabase.getInstance();
@@ -53,8 +50,7 @@ public class FriendsFragment extends Fragment {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+
                 String value = dataSnapshot.getValue().toString();
                 Log.d(TAG, "Value is: " + value);
 
@@ -64,8 +60,7 @@ public class FriendsFragment extends Fragment {
                     Log.d(TAG, "Value is: " + value2);
                     Friend friend = dataSnapshot2.getValue(Friend.class);
 
-                    // [START_EXCLUDE]
-                    // Update RecyclerView
+
 
                     mFriend.add(friend);
                     mAdapter.notifyItemInserted(mFriend.size() - 1);
@@ -74,7 +69,7 @@ public class FriendsFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
+
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });

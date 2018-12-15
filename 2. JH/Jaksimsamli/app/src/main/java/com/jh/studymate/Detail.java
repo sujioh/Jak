@@ -16,7 +16,7 @@ public class Detail extends Activity implements OnClickListener {
     String today;
     EditText editDate, editTitle, editTime, editMemo;
 
-    /** Called when the activity is first created. */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +64,7 @@ public class Detail extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
+
         SQLiteDatabase db = mDBHelper.getWritableDatabase();
 
         switch (v.getId()) {

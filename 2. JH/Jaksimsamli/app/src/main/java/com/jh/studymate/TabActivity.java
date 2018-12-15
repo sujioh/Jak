@@ -35,7 +35,7 @@ public class TabActivity extends AppCompatActivity implements NavigationView.OnN
         drawer. addDrawerListener(toggle);
         toggle.syncState();
 
-        //앱 처음 나오는 화면을 FriendsFragment()로 설정
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FriendsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_friends);

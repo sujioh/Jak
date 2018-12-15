@@ -18,11 +18,7 @@ import com.google.api.client.util.Objects;
 import com.google.api.services.calendar.model.Calendar;
 import com.google.api.services.calendar.model.CalendarListEntry;
 
-/**
- * Class that holds information about a calendar.
- * 
- * @author Yaniv Inbar
- */
+
 class CalendarInfo implements Comparable<CalendarInfo>, Cloneable {
 
   static final String FIELDS = "id,summary";
@@ -59,7 +55,7 @@ class CalendarInfo implements Comparable<CalendarInfo>, Cloneable {
     try {
       return (CalendarInfo) super.clone();
     } catch (CloneNotSupportedException exception) {
-      // should not happen
+
       throw new RuntimeException(exception);
     }
   }

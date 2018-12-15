@@ -30,7 +30,7 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    String[] myDataset = {"안녕", "오늘","뭐했어","영화볼래?"};
+    String[] myDataset = {"test1", "test2","test3","test4"};
 
     EditText etText;
     Button btnSend;
@@ -45,7 +45,7 @@ public class ChatActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            // Name, email address, and profile photo Url
+
             email = user.getEmail();
         }
 
@@ -97,15 +97,14 @@ public class ChatActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
+
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mChat = new ArrayList<>();
-        // specify an adapter (see also next example)
+
         mAdapter = new MyAdapter(mChat, email, ChatActivity.this);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -116,8 +115,6 @@ public class ChatActivity extends AppCompatActivity {
 
                 Chat chat = dataSnapshot.getValue(Chat.class);
 
-                // [START_EXCLUDE]
-                // Update RecyclerView
 
                 mChat.add(chat);
                 mRecyclerView.scrollToPosition(mChat.size() - 1);

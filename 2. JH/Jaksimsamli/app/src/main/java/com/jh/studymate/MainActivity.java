@@ -51,7 +51,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    SignInButton Google_Login; //구글로그인버튼추가
+    SignInButton Google_Login; //구글 로그인 버튼
     String TAG = "MainActivity";
     EditText etEmail;
     EditText etPassword;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     String stPassword;
     ProgressBar pbLogin;
 
-    private static int RC_SIGN_IN = 100; //구글로그인버튼추
+    private static int RC_SIGN_IN = 100; //구글 로그인 버튼
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private BackPressedForFinish backPressedForFinish;
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);//뒤로가기
+        setContentView(R.layout.activity_main); //뒤로가기
 
         EditText etId=(EditText)findViewById(R.id.etEmail);
         EditText etPwd=(EditText)findViewById(R.id.etPassword);
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         etId.requestFocus();
 
-        // Activtiy 불러올 시 SharedPreFerences에 저장 되었는  "pref"에서 조건에 맞춰 값을 가져온다
+
         SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
         String id=pref.getString("id_save", "");
         String pwd=pref.getString("pwd_save", "");
@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             etPwdSave.setChecked(chk2);
 
         }
-        // BackPressedForFinish 객체를 생성한다.
+
         backPressedForFinish = new BackPressedForFinish(this);
-        //페북로그인버튼시작
+        //페북 로그인 버튼
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         });
 
 
-        //페북로그인버튼끝 (아래또있음걍지금만끝)
+        //페북로그인버튼end
 
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPassword = (EditText)findViewById(R.id.etPassword);
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     }
-    //구글로그인버튼 추가
+    //구글로그인버튼
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
     }
 
-    //구글로그인버튼끝
+    //구글로그인버튼end
 
     @Override
     public void onStart() {
@@ -308,7 +308,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     //뒤로가기
     public void onBackPressed() {
 
-        // BackPressedForFinish 클래시의 onBackPressed() 함수를 호출한다.
         backPressedForFinish.onBackPressed();
     }
 

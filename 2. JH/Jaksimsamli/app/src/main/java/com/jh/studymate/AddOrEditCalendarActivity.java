@@ -21,11 +21,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Activity to add or edit a calendar.
- * 
- * @author Yaniv Inbar
- */
+
 public class AddOrEditCalendarActivity extends Activity {
 
   private EditText summaryEditText;

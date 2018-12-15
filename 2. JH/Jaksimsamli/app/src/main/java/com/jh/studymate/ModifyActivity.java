@@ -37,7 +37,7 @@ public class ModifyActivity extends AppCompatActivity {
                 "from board where _id = '"+id + "'";
         Cursor cursor = db.rawQuery(sql,null);
         if(cursor.moveToNext()){
-            //기존 값을 가지고와서 다시 넣어줘요
+
 
             etSubject.setText(cursor.getString(1));
             etWriter.setText(cursor.getString(2));

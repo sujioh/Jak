@@ -23,11 +23,6 @@ import com.google.api.services.calendar.model.Calendar;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Asynchronously insert a new calendar.
- * 
- * @author Yaniv Inbar
- */
 class AsyncBatchInsertCalendars extends CalendarAsyncTask {
 
   private final List<Calendar> calendars;

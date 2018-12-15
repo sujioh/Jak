@@ -32,11 +32,9 @@ public class WriteActivity extends AppCompatActivity {
                 String stretMail = etMail.getText().toString();
                 String stretPhon = etPhon.getText().toString();
 
-                //필수 입력 항목 검사 (경고창) 토스트 해야함.
 
                 SQLiteDatabase db = openOrCreateDatabase("board.db",MODE_PRIVATE,null);
 
-                //크리에이트 구문을 문자열로 치거나 스트링 빌더, 스트링버퍼 든 마음대로.if not exist
                 String sql ="insert into board(\n" +
                         "subject, writer, mail, phone ,password, content,hit,wdate)\n" +
                         " values('" + stretSubject+ "','" + stretWriter+"','"+ stretMail +"','"+ stretPhon +"','"+stretPessword +"','"+stretContent +"',0,datetime('now','localtime'))";

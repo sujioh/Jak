@@ -42,7 +42,7 @@ public class TodoActivity extends AppCompatActivity {
 
         loadTaskList();
 
-        // 오늘 날짜 설정
+
         TextView iYear = (TextView)findViewById(R.id.iYear);
         TextView iMonth = (TextView)findViewById(R.id.iMonth);
         TextView iDate = (TextView)findViewById(R.id.iDate);
@@ -75,7 +75,6 @@ public class TodoActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.todo_menu,menu);
 
-        //change menu icon color
         Drawable icon = menu.getItem(0).getIcon();
         icon.mutate();
         icon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);

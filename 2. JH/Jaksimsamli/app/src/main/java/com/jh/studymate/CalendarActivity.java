@@ -39,7 +39,7 @@ public class CalendarActivity extends Activity implements OnClickListener,
         gird.setAdapter(adapter);
         gird.setOnItemClickListener(this);
 
-        Date date = new Date();// 오늘에 날짜를 세팅 해준다.
+        Date date = new Date();
         int year = date.getYear() + 1900;
         int mon = date.getMonth() + 1;
         textYear.setText(year + "");
@@ -75,13 +75,13 @@ public class CalendarActivity extends Activity implements OnClickListener,
         mItems.add("토");
 
         Date current = new Date(year - 1900, mon - 1, 1);
-        int day = current.getDay(); // 요일도 int로 저장.
+        int day = current.getDay();
 
         for (int i = 0; i < day; i++) {
             mItems.add("");
         }
 
-        current.setDate(32);// 32일까지 입력하면 1일로 바꿔준다.
+        current.setDate(32);
         int last = 32 - current.getDate();
 
         for (int i = 1; i <= last; i++) {
@@ -93,7 +93,7 @@ public class CalendarActivity extends Activity implements OnClickListener,
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-        // TODO Auto-generated method stub
+
         if (mItems.get(arg2).equals("")) {
             ;
         } else {

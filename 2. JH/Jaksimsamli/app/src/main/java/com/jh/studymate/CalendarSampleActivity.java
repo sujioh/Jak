@@ -52,33 +52,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Sample activity for Google Calendar API v3. It demonstrates how to use authorization to list
- * calendars, add a new calendar, and edit or delete an existing calendar with the user's
- * permission.
- * 
- * <p>
- * <b>Warning:</b> this sample is for illustrative purposes only. Please instead use the native
- * Calendar APIs like the <a
- * href="http://developer.android.com/guide/topics/providers/calendar-provider.html">Calendar
- * Provider API</a>.
- * </p>
- * 
- * @author Yaniv Inbar
- */
+
 public final class CalendarSampleActivity extends Activity {
 
-  /**
-   * Logging level for HTTP requests/responses.
-   * 
-   * <p>
-   * To turn on, set to {@link Level#CONFIG} or {@link Level#ALL} and run this from command line:
-   * </p>
-   * 
-   * <pre>
-adb shell setprop log.tag.HttpTransport DEBUG
-   * </pre>
-   */
+
   private static final Level LOGGING_LEVEL = Level.OFF;
 
   private static final String PREF_ACCOUNT_NAME = "accountName";
@@ -118,18 +95,18 @@ adb shell setprop log.tag.HttpTransport DEBUG
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    // enable logging
+
     Logger.getLogger("com.google.api.client").setLevel(LOGGING_LEVEL);
-    // view and menu
+
     setContentView(R.layout.calendarlist);
     listView = (ListView) findViewById(R.id.list);
     registerForContextMenu(listView);
-    // Google Accounts
+
     credential =
         GoogleAccountCredential.usingOAuth2(this, Collections.singleton(CalendarScopes.CALENDAR));
     SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
     credential.setSelectedAccountName(settings.getString(PREF_ACCOUNT_NAME, null));
-    // Calendar client
+
     client = new com.google.api.services.calendar.Calendar.Builder(
         transport, jsonFactory, credential).setApplicationName("Google-CalendarAndroidSample/1.0")
         .build();
@@ -151,7 +128,7 @@ adb shell setprop log.tag.HttpTransport DEBUG
 
         @Override
       public View getView(int position, View convertView, ViewGroup parent) {
-        // by default it uses toString; override to use summary instead
+
         TextView view = (TextView) super.getView(position, convertView, parent);
         CalendarInfo calendarInfo = getItem(position);
         view.setText(calendarInfo.summary);
@@ -286,7 +263,7 @@ adb shell setprop log.tag.HttpTransport DEBUG
     startAddOrEditCalendarActivity(null);
   }
 
-  /** Check that Google Play services APK is installed and up to date. */
+
   private boolean checkGooglePlayServicesAvailable() {
     final int connectionStatusCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
     if (GooglePlayServicesUtil.isUserRecoverableError(connectionStatusCode)) {
@@ -297,12 +274,12 @@ adb shell setprop log.tag.HttpTransport DEBUG
   }
 
   private void haveGooglePlayServices() {
-    // check if there is already an account selected
+
     if (credential.getSelectedAccountName() == null) {
-      // ask user to choose account
+
       chooseAccount();
     } else {
-      // load calendars
+
       AsyncLoadCalendars.run(this);
     }
   }

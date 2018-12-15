@@ -22,12 +22,7 @@ import android.view.View;
 
 import java.io.IOException;
 
-/**
- * Asynchronous task that also takes care of common needs, such as displaying progress,
- * authorization, exception handling, and notifying UI when operation succeeded.
- * 
- * @author Yaniv Inbar
- */
+
 abstract class CalendarAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
   final CalendarSampleActivity activity;

@@ -22,25 +22,23 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         listView = (ListView)findViewById(R.id.listView);
         readDatabase();
-        //맨처음은 테이블이 없기때문에 에러날 수 있다. 그러니까 크리에이트 부분을
-        //셀렉트 전의 위치로 옮긴다.
+
 
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //포지션을 통해 어레이리스트에 접근
-                //System.out.println(boardRecords.get(position).get_id());
+
                 Intent intent=new Intent(ListActivity.this,ViewActivity.class);
                 intent.putExtra("id",boardRecords.get(position).get_id());
-                startActivityForResult(intent,1);//1번 이라는 키값을 가짐
+                startActivityForResult(intent,1);
             }
         });
 
         findViewById(R.id.listButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(ListActivity.this,WriteActivity.class);
+
                 Intent intent = new Intent(ListActivity.this,WriteActivity.class);
                 startActivityForResult(intent,0);
             }
@@ -50,10 +48,10 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 0) { //write 엑티비티- 인텐트가 0인 거를 가져오는거임
+        if(requestCode == 0) {
             if(resultCode == RESULT_OK){}
         }
-        if(requestCode == 1) {  //View 엑티비티- 인텐트가 1인 거를 가져오는거임
+        if(requestCode == 1) {
             if(resultCode == RESULT_OK){}
         }
         readDatabase();
@@ -73,9 +71,9 @@ public class ListActivity extends AppCompatActivity {
                 "content text,\n" +
                 "hit integer not null,\n" +
                 "wdate date not null)";
-        db.execSQL(sql); //테이블 생성
+        db.execSQL(sql);
 
-        boardRecords = new ArrayList<BoardTO>();//아이디 담는 어레이리스트
+        boardRecords = new ArrayList<BoardTO>();
 
         sql ="select _id ,subject, writer, mail, " +
                 "phone ,password, content, hit, wdate " +
@@ -102,13 +100,12 @@ public class ListActivity extends AppCompatActivity {
             String password =cursor.getString(5);
             String content =cursor.getString(6);
             String wdate =cursor.getString(7);*/
-            //받은 데이터를 객체에 넣고 넣었다 뽑으면 편하다.
-            // 아니면 데이터를 별도로 넣을 어레이리스트를 만들어도 된다
+
 
             String recorde = String.format("번호: %s \n제목: %s \n작성일: %s \n메일: %s"
                     , boardTo.get_id(), boardTo.getSubject(),boardTo.getWdate(),boardTo.getMail());
             data1.add(recorde);
-            boardRecords.add(boardTo);//조심해야 할게. 반드시 뉴 해야 합니다.
+            boardRecords.add(boardTo);
         }
         cursor.close();
         db.close();
